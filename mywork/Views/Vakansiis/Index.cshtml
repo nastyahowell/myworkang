@@ -1,0 +1,76 @@
+﻿@model IEnumerable<mywork.Models.Vakansii>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Найти работу</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Организация)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Требования)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Функционал)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Формат_работы)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Доход)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.График)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Условия)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Организация)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Должность)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Требования)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Функционал)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Формат_работы)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Доход)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.График)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Условия)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

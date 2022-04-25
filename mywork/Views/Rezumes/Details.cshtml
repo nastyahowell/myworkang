@@ -1,0 +1,83 @@
+﻿@model mywork.Models.Rezume
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rezume</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Фамилия)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Имя)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Имя)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Отчество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Возраст)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Возраст)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Опыт_работы)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Опыт_работы)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Образование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Образование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Желаемый_доход)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Желаемый_доход)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.О_себе)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.О_себе)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

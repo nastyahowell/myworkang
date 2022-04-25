@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище rabotaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Rezume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Отчество" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Возраст" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Опыт работы" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Образование" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Желаемый доход" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="О себе" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vakansii">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Организация" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Должность" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Требования" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Функционал" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Формат работы" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Доход" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="График" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Условия" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище rabotaModelContainer">
+          <EntitySet Name="Rezume" EntityType="Self.Rezume" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vakansii" EntityType="Self.Vakansii" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rabotaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Rezume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Отчество" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Возраст" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Опыт_работы" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Образование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Желаемый_доход" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="О_себе" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vakansii">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Организация" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Должность" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Требования" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Функционал" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Формат_работы" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Доход" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="График" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Условия" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="rabotaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Rezume" EntityType="Self.Rezume" />
+          <EntitySet Name="Vakansii" EntityType="Self.Vakansii" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище rabotaModelContainer" CdmEntityContainer="rabotaEntities">
+          <EntitySetMapping Name="Rezume">
+            <EntityTypeMapping TypeName="rabotaModel.Rezume">
+              <MappingFragment StoreEntitySet="Rezume">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+                <ScalarProperty Name="Возраст" ColumnName="Возраст" />
+                <ScalarProperty Name="Опыт_работы" ColumnName="Опыт работы" />
+                <ScalarProperty Name="Образование" ColumnName="Образование" />
+                <ScalarProperty Name="Желаемый_доход" ColumnName="Желаемый доход" />
+                <ScalarProperty Name="О_себе" ColumnName="О себе" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vakansii">
+            <EntityTypeMapping TypeName="rabotaModel.Vakansii">
+              <MappingFragment StoreEntitySet="Vakansii">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Организация" ColumnName="Организация" />
+                <ScalarProperty Name="Должность" ColumnName="Должность" />
+                <ScalarProperty Name="Требования" ColumnName="Требования" />
+                <ScalarProperty Name="Функционал" ColumnName="Функционал" />
+                <ScalarProperty Name="Формат_работы" ColumnName="Формат работы" />
+                <ScalarProperty Name="Доход" ColumnName="Доход" />
+                <ScalarProperty Name="График" ColumnName="График" />
+                <ScalarProperty Name="Условия" ColumnName="Условия" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

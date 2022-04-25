@@ -1,0 +1,83 @@
+﻿@model mywork.Models.Vakansii
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vakansii</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Организация)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Организация)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Требования)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Требования)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Функционал)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Функционал)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Формат_работы)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Формат_работы)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Доход)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Доход)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.График)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.График)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Условия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Условия)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
